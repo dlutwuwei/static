@@ -42,7 +42,7 @@ html {
 html.engine-design-mode {
   padding-bottom: 0;
   overflow-y: overlay;
-  width: 100vh;
+  width: 100vw;
   overflow-x: hidden;
 }
 html.engine-cursor-move,
