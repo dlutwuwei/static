@@ -104,27 +104,27 @@ const init = (global = window, baseFontSize = 100) => {
     console.log ('---dw=', dw);
     console.log ('document.body.offsetWidth=', document.body.offsetWidth);
     // 非mobile情况
-    if (!global.sysType.mobile) {
-      if (dw >= 750) {
-        // windows PC端 按750大小初始化
-        global.rem = baseFontSize;
-      } else {
-        // windows PC端 小于750 按移动端处理
-        global.rem = baseFontSize / 2 * (dw / 375);
-      }
-      if (global.sysType.facility === 'android') {
-        // 单屏机
-        const isSingleScreen =
-          document.body.offsetHeight > document.body.offsetWidth;
-        if (!isSingleScreen && location.pathname === '/store/download') {
-          global.rem = baseFontSize / 2 * countScale;
-          document.getElementById ('root').style.maxWidth = '100%'; // 30.56rem
-        }
-      }
-    } else {
-      // mobile 手机端
-      global.rem = baseFontSize / 2 * (dw / 375);
-    }
+    // if (!global.sysType.mobile) {
+    //   if (dw >= 750) {
+    //     // windows PC端 按750大小初始化
+    //     global.rem = baseFontSize;
+    //   } else {
+    //     // windows PC端 小于750 按移动端处理
+    //     global.rem = baseFontSize / 2 * (dw / 375);
+    //   }
+    //   if (global.sysType.facility === 'android') {
+    //     // 单屏机
+    //     const isSingleScreen =
+    //       document.body.offsetHeight > document.body.offsetWidth;
+    //     if (!isSingleScreen && location.pathname === '/store/download') {
+    //       global.rem = baseFontSize / 2 * countScale;
+    //       document.getElementById ('root').style.maxWidth = '100%'; // 30.56rem
+    //     }
+    //   }
+    // } else {
+    // mobile 手机端
+    global.rem = baseFontSize / 2 * (dw / 375);
+    // }
     if (location.pathname === '/store/helpCenter') {
       // 单屏机(设计稿宽度1528)
       global.rem = baseFontSize / 2 * (dw / 1528);
